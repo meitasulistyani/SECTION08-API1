@@ -6,7 +6,7 @@ describe('Create New User',()=>{
     }
     cy.request('POST', 'https://reqres.in/api/users', user).then((response)=>{
         expect(response.status).equal(201)
-        expect('name')
+        expect(response.body.name).to.eq(user.name)
     })
   });
 });
